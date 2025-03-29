@@ -1,0 +1,281 @@
+﻿<UserControl x:Class="WPFNetFramePrismMD.Views.RegionUC.TestFileOperView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPFNetFramePrismMD.Views.RegionUC"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*" />
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <md:Card  Margin="10" BorderBrush="Blue">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Image
+                  Source="/Asserts/Img/零度.png"
+                  Stretch="Uniform"  />
+                    <Button
+                  Grid.Row="0"
+                  Margin="0,0,16,-20"
+                  HorizontalAlignment="Right"
+                  VerticalAlignment="Bottom"
+                  Style="{StaticResource MaterialDesignFloatingActionMiniSecondaryButton}">
+                        <md:PackIcon
+                  Kind="Bike" />
+                    </Button>
+                    <StackPanel Grid.Row="1" Margin="8,5,0,0">
+                        <TextBlock FontWeight="Bold" FontSize="20" VerticalAlignment="Center"
+                                      Text="零度编程，让你优雅"
+                                      TextWrapping="Wrap" />
+                        <StackPanel  Margin="2"
+                            HorizontalAlignment="Right"
+                            Orientation="Horizontal">
+                            <Button
+                              Width="30"
+                              Padding="2,0,2,0"
+                              md:RippleAssist.IsCentered="True"
+                              Style="{StaticResource MaterialDesignToolButton}">
+                                <md:PackIcon Kind="ShareVariant" />
+                            </Button>
+                            <Button
+                              Width="30"
+                              Padding="2,0,2,0"
+                              md:RippleAssist.IsCentered="True"
+                              Style="{StaticResource MaterialDesignToolButton}">
+                                <md:PackIcon Kind="Heart" />
+                            </Button>
+                            <md:PopupBox Padding="2,0,2,0">
+                                <StackPanel>
+                                    <Button Content="More" />
+                                    <Button Content="Options" />
+                                </StackPanel>
+                            </md:PopupBox>
+                        </StackPanel>
+                    </StackPanel>
+                    
+                </Grid>
+            </md:Card>
+            <md:Card  Margin="10" BorderBrush="Blue">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Image
+       Source="/Asserts/Img/Hik.png"
+       Stretch="None"  />
+                    <Button
+       Grid.Row="0"
+       Margin="0,0,16,-20"
+       HorizontalAlignment="Right"
+       VerticalAlignment="Bottom"
+       Style="{StaticResource MaterialDesignFloatingActionMiniSecondaryButton}">
+                        <md:PackIcon
+       Kind="Bike" />
+                    </Button>
+                    <StackPanel Grid.Row="1" Margin="8,5,0,0">
+                        <TextBlock FontWeight="Bold" FontSize="25" VerticalAlignment="Center"
+                           Text="Hik，让你起飞"
+                           TextWrapping="Wrap" />
+                        <StackPanel  Margin="2"
+                 HorizontalAlignment="Right"
+                 Orientation="Horizontal">
+                            <Button
+                   Width="30"
+                   Padding="2,0,2,0"
+                   md:RippleAssist.IsCentered="True"
+                   Style="{StaticResource MaterialDesignToolButton}">
+                                <md:PackIcon Kind="ShareVariant" />
+                            </Button>
+                            <Button
+                   Width="30"
+                   Padding="2,0,2,0"
+                   md:RippleAssist.IsCentered="True"
+                   Style="{StaticResource MaterialDesignToolButton}">
+                                <md:PackIcon Kind="Heart" />
+                            </Button>
+                            <md:PopupBox Padding="2,0,2,0">
+                                <StackPanel>
+                                    <Button Content="More" />
+                                    <Button Content="Options" />
+                                </StackPanel>
+                            </md:PopupBox>
+                        </StackPanel>
+                    </StackPanel>
+
+                </Grid>
+            </md:Card>
+            <md:Card Margin="10" BorderBrush="Blue">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Image
+Source="/Asserts/Img/EasyVision.png"
+Stretch="Uniform"  />
+                    <Button
+Grid.Row="0"
+Margin="0,0,16,-20"
+HorizontalAlignment="Right"
+VerticalAlignment="Bottom"
+Style="{StaticResource MaterialDesignFloatingActionMiniSecondaryButton}">
+                        <md:PackIcon
+Kind="Bike" />
+                    </Button>
+                    <StackPanel Grid.Row="1" Margin="8,5,0,0">
+                        <TextBlock FontWeight="Bold" FontSize="20" VerticalAlignment="Center"
+                    Text="easyvision，让你起飞的更容易"
+                    TextWrapping="Wrap" />
+                        <StackPanel  Margin="2"
+          HorizontalAlignment="Right"
+          Orientation="Horizontal">
+                            <Button
+            Width="30"
+            Padding="2,0,2,0"
+            md:RippleAssist.IsCentered="True"
+            Style="{StaticResource MaterialDesignToolButton}">
+                                <md:PackIcon Kind="ShareVariant" />
+                            </Button>
+                            <Button
+            Width="30"
+            Padding="2,0,2,0"
+            md:RippleAssist.IsCentered="True"
+            Style="{StaticResource MaterialDesignToolButton}">
+                                <md:PackIcon Kind="Heart" />
+                            </Button>
+                            <md:PopupBox Padding="2,0,2,0">
+                                <StackPanel>
+                                    <Button Content="More" />
+                                    <Button Content="Options" />
+                                </StackPanel>
+                            </md:PopupBox>
+                        </StackPanel>
+                    </StackPanel>
+
+                </Grid>
+            </md:Card>
+            <md:Card  Margin="10" BorderBrush="Blue">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Image
+Source="/Asserts/Img/Prism接口.png"
+Stretch="Uniform"  />
+                    <Button
+Grid.Row="0"
+Margin="0,0,16,-20"
+HorizontalAlignment="Right"
+VerticalAlignment="Bottom"
+Style="{StaticResource MaterialDesignFloatingActionMiniSecondaryButton}">
+                        <md:PackIcon
+Kind="Bike" />
+                    </Button>
+                    <StackPanel Grid.Row="1" Margin="8,5,0,0">
+                        <TextBlock FontWeight="Bold" FontSize="20" VerticalAlignment="Center"
+                    Text="Prism接口，拿捏！"
+                    TextWrapping="Wrap" />
+                        <StackPanel  Margin="2"
+          HorizontalAlignment="Right"
+          Orientation="Horizontal">
+                            <Button
+            Width="30"
+            Padding="2,0,2,0"
+            md:RippleAssist.IsCentered="True"
+            Style="{StaticResource MaterialDesignToolButton}">
+                                <md:PackIcon Kind="ShareVariant" />
+                            </Button>
+                            <Button
+            Width="30"
+            Padding="2,0,2,0"
+            md:RippleAssist.IsCentered="True"
+            Style="{StaticResource MaterialDesignToolButton}">
+                                <md:PackIcon Kind="Heart" />
+                            </Button>
+                            <md:PopupBox Padding="2,0,2,0">
+                                <StackPanel>
+                                    <Button Content="More" />
+                                    <Button Content="Options" />
+                                </StackPanel>
+                            </md:PopupBox>
+                        </StackPanel>
+                    </StackPanel>
+
+                </Grid>
+            </md:Card>
+        </StackPanel>
+        <TabControl Grid.Row="1" Margin="16">
+            <TabItem Header="Json文件操作" Background="Blue">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="生成默认数据" Command="{Binding BuildDefaultDataCommand}" CommandParameter="Json" Margin="0,0,8,0"/>
+                        <Button Content="加载Json文件" Command="{Binding LoadJsonFileCommand}" Margin="0,0,8,0"/>
+                        <Button Content="保存Json文件" Command="{Binding SaveJsonFileCommand}" Margin="0,0,8,0"/>
+                        <Button Content="清空Json文件" Command="{Binding ClearJsonFileCommand}" Margin="0,0,8,0"/>
+                    </StackPanel>
+                    <ListView ItemsSource="{Binding StuJsonList}" SelectedIndex="{Binding SelectedJsonItemIndex}">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="姓名" DisplayMemberBinding="{Binding Name}" Width="100"/>
+                                <GridViewColumn Header="年龄" DisplayMemberBinding="{Binding Age}" Width="50"/>
+                                <GridViewColumn Header="班级" DisplayMemberBinding="{Binding Class}" Width="100"/>
+                                <!-- 你可以根据需要添加更多列 -->
+                            </GridView>
+                        </ListView.View>
+                        <ListView.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="添加" Command="{Binding AddJsonItemCommand}" />
+                                <MenuItem Header="编辑" Command="{Binding EditJsonItemCommand}" />
+                                <MenuItem Header="删除" Command="{Binding DeleteJsonItemCommand}" />
+                            </ContextMenu>
+                        </ListView.ContextMenu>
+                    </ListView>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Csv文件夹操作" Background="Blue">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="生成默认数据" Command="{Binding BuildDefaultDataCommand}" CommandParameter="Csv" Margin="0,0,8,0"/>
+                        <Button Content="加载Json文件" Command="{Binding LoadJsonFileCommand}" Margin="0,0,8,0"/>
+                        <Button Content="保存Json文件" Command="{Binding SaveJsonFileCommand}" Margin="0,0,8,0"/>
+                        <Button Content="清空Json文件" Command="{Binding ClearJsonFileCommand}" Margin="0,0,8,0"/>
+                    </StackPanel>
+                    <DataGrid ItemsSource="{Binding ErrorCsvList}" SelectedIndex="{Binding SelectedCsvItemIndex}" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding ErrorID}" Width="150"/>
+                            <DataGridTextColumn Header="ErrType" Binding="{Binding ErrType}" Width="150"/>
+                            <DataGridTextColumn Header="EnglishDetail" Binding="{Binding ErrorEnglishDetail}" Width="300"/>
+                            <DataGridTextColumn Header="ChineseDetail" Binding="{Binding ErrorChineseDetail}" Width="200"/>
+                            <!-- 你可以根据需要添加更多列 -->
+                        </DataGrid.Columns>
+                        <DataGrid.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="添加" Command="{Binding AddCsvItemCommand}" />
+                                <MenuItem Header="编辑" Command="{Binding EditCsvItemCommand}" />
+                                <MenuItem Header="删除" Command="{Binding DeleteCsvItemCommand}" />
+                            </ContextMenu>
+                        </DataGrid.ContextMenu>
+                    </DataGrid>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</UserControl>

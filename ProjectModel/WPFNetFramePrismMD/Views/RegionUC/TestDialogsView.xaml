@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="WPFNetFramePrismMD.Views.RegionUC.TestDialogsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPFNetFramePrismMD.Views.RegionUC"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes">
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="{Binding ViewTitle}"/>
+            <GroupBox Header="LoginDialog" Margin="15">
+                <StackPanel>
+                    <Label Content="这个GroupBox演示Dialog显示信息的功能" HorizontalAlignment="Center" FontSize="30" DockPanel.Dock="Top"/>
+                    <TextBox  Text="{Binding DialogInfo}"
+                              md:HintAssist.Hint="请输入要弹出的对话框信息"
+                              TextWrapping="Wrap"  Margin="10" DockPanel.Dock="Top"/>
+                    <Button Content="Open Dialog" Command="{Binding OpenDialogCommand}" 
+                            CommandParameter="Dialog"/>
+                </StackPanel>
+            </GroupBox>
+            
+            <GroupBox Header="LoginDialog" Margin="15">
+                <DockPanel LastChildFill="False" DockPanel.Dock="Top">
+                    <Label Content="这个GroupBox演示Dialog回传参数的功能" HorizontalAlignment="Center" FontSize="30" DockPanel.Dock="Top"/>
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="10">
+                        <Label Content ="UserName:"/>
+                        <TextBlock Text="{Binding UserName}" Background="Green" Foreground="White"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="10">
+                        <Label Content ="Password:"/>
+                        <TextBlock  Text="{Binding Password}" Background="Green" Foreground="White"/>
+                    </StackPanel>
+                    <Button  DockPanel.Dock="Top" Content="Open LoginDialog" Command="{Binding OpenDialogCommand}" CommandParameter="LoginDialog"/>
+                </DockPanel> 
+             </GroupBox>
+        </StackPanel>
+        
+    </Grid>
+</UserControl>

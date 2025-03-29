@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="WPFNetFramePrismMD.Views.RegionUC.TestEventView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPFNetFramePrismMD.Views.RegionUC"
+             xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal"  Margin="5">
+                <Label Content="消息IDCode,默认主界面过滤Code为非100的消息:             " />
+                <TextBox Text="{Binding PubCode}" md:HintAssist.Hint="请输入需要发送的IDCode" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"  Margin="5">
+                <Label Content="消息内容:                                                                           " />
+                <TextBox Text="{Binding PubMsg}"  md:HintAssist.Hint="请输入需要发送的消息"/>
+            </StackPanel>
+            <Button Content="SendMessageToMainView" Command="{Binding SendMessageToMainViewCommand}" />
+        </StackPanel>
+        
+    </Grid>
+</UserControl>
