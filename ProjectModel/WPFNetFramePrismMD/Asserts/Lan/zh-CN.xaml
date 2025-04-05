@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <sys:String x:Key="MainTitle">WPFPrism工业自动化启蒙版祝你扬帆起航！__FeiyaoAuto</sys:String>
+
+    <sys:String x:Key="ViewA">界面A</sys:String>
+    <sys:String x:Key="DialogsView">对话框</sys:String>
+    <sys:String x:Key="ViewC">界面C</sys:String>
+    <sys:String x:Key="TestEventView">测试Eventew</sys:String>
+    <sys:String x:Key="TestShowMsg">显示Msg</sys:String>
+    <sys:String x:Key="TestFileOper">文件操作r</sys:String>
+
+
+    <sys:String x:Key="CurrentLanguage">当前语言</sys:String>
+    <sys:String x:Key="Skin">主题</sys:String>
+    <sys:String x:Key="SaveSetting">保存设置</sys:String>
+
+</ResourceDictionary>

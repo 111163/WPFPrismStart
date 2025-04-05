@@ -86,10 +86,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Events\LanguageEventBus.cs" />
     <Compile Include="Events\MessageEvent.cs" />
+    <Compile Include="Models\LanguageInfo.cs" />
     <Compile Include="ViewModels\Dialogs\Class1.cs" />
     <Compile Include="ViewModels\Dialogs\LoginDialogViewModel.cs" />
     <Compile Include="ViewModels\Dialogs\MessageShowDialogViewModel.cs" />
+    <Compile Include="ViewModels\Dialogs\SettingDialogViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\RegionUC\TestEventViewModel.cs" />
     <Compile Include="ViewModels\RegionUC\TestFileOperViewModel.cs" />
@@ -102,6 +105,9 @@
     </Compile>
     <Compile Include="Views\Dialogs\MessageShowDialogView.xaml.cs">
       <DependentUpon>MessageShowDialogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dialogs\SettingDialogViewxaml.xaml.cs">
+      <DependentUpon>SettingDialogViewxaml.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Dialogs\UserControl1.xaml.cs">
       <DependentUpon>UserControl1.xaml</DependentUpon>
@@ -146,6 +152,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Asserts\Lan\Lan.md" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -159,6 +166,14 @@
     <Folder Include="Asserts\Fonts\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Asserts\Lan\en-US.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Asserts\Lan\zh-CN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Dialogs\LoginDialogView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -166,6 +181,10 @@
     <Page Include="Views\Dialogs\MessageShowDialogView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Dialogs\SettingDialogViewxaml.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Dialogs\UserControl1.xaml">
       <SubType>Designer</SubType>
@@ -198,6 +217,10 @@
     <Page Include="Views\RegionUC\TestViewC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="zh-CN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>

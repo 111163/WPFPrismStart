@@ -1,4 +1,5 @@
-﻿using Prism.Commands;
+﻿using FeiyaoAutoBaseLib;
+using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;
 using Prism.Regions;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WPFNetFramePrismMD.Events;
+using WPFNetFramePrismMD.Models;
 
 namespace WPFNetFramePrismMD.ViewModels
 {
@@ -21,14 +23,59 @@ namespace WPFNetFramePrismMD.ViewModels
         private readonly IEventAggregator _aggregator;
         public MainViewModel(IRegionManager region, IEventAggregator aggregator)
         {
+            _aggregator = aggregator;
             _region = region;
             NaviCommand = new DelegateCommand<string>(Navi);
-            _aggregator = aggregator;
+            ChangeLanCommand= new DelegateCommand(() =>
+            {
+
+                if (LanguageTool.AppCurrentLanguage == CurrentLanguage.Key) return;
+
+                LanguageTool.SetLanguage(CurrentLanguage.Key);
+                aggregator.GetEvent<LanguageEventBus>().Publish(true);
+                //System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("zh-CN");
+                //System.Threading.Thread.CurrentThread.CurrentUICulture = culture;
+                //System.Windows.Application.Current.Resources.MergedDictionaries[0].Source = new Uri("/WPFNetFramePrismMD;component/Resources/zh-CN.xaml", UriKind.Relative);
+            });
+            LanguageInfos = new ObservableCollection<LanguageInfo>();
+            InitLanguageInfos();
+            CurrentLanguage = LanguageInfos[0];
+            
             
             Messages = new ObservableCollection<MessageModel>();
             _aggregator.GetEvent<MessageEvent>().Subscribe(ShowMessage,filter);
         }
+        private ObservableCollection<LanguageInfo> languageInfos;
 
+        public ObservableCollection<LanguageInfo> LanguageInfos
+        {
+            get { return languageInfos; }
+            set { languageInfos = value; RaisePropertyChanged(); }
+        }
+        private void InitLanguageInfos()
+        {
+            LanguageInfos.Add(new LanguageInfo() { Key = "zh-CN", Value = "Chinese" });
+            LanguageInfos.Add(new LanguageInfo() { Key = "en-US", Value = "English" });
+        }
+        private LanguageInfo currentLanguage;
+        public LanguageInfo CurrentLanguage
+        {
+            get { return currentLanguage; }
+            set
+            {
+                currentLanguage = value;
+                LanguageChanged();
+                RaisePropertyChanged();
+            }
+        }
+
+        private void LanguageChanged()
+        {
+            if (LanguageTool.AppCurrentLanguage == CurrentLanguage.Key) return;
+
+            LanguageTool.SetLanguage(CurrentLanguage.Key);
+            _aggregator.GetEvent<LanguageEventBus>().Publish(true);
+        }
 
         private bool _EnalbeEventFliter;
 
@@ -77,7 +124,7 @@ namespace WPFNetFramePrismMD.ViewModels
                     System.Diagnostics.Debug.WriteLine(callBack.Error.Message);
             });
         }
-
+        public DelegateCommand ChangeLanCommand { get; set; }
         public DelegateCommand<string> NaviCommand { get;set; }
         public bool IsNavigationTarget(NavigationContext navigationContext)
         {

@@ -1,0 +1,20 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+
+    <sys:String x:Key="MainTitle">Hello WPFIndustry ！__FeiyaoAuto</sys:String>
+
+    <sys:String x:Key="ViewA">ViewA</sys:String>
+    <sys:String x:Key="DialogsView">DialogsView  </sys:String>
+    <sys:String x:Key="ViewC">ViewC </sys:String>
+    <sys:String x:Key="TestEventView">TestEventView</sys:String>
+    <sys:String x:Key="TestShowMsg">TestShowMsg  </sys:String>
+    <sys:String x:Key="TestFileOper">TestFileOper</sys:String>
+                
+                
+    <sys:String x:Key="CurrentLanguage">CurrentLanguage</sys:String>
+    <sys:String x:Key="Skin">Skin</sys:String>
+    <sys:String x:Key="SaveSetting">SaveSetting</sys:String>
+
+</ResourceDictionary>
