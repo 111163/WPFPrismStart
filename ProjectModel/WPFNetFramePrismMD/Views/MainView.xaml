@@ -35,8 +35,8 @@
                         FontSize="24"
                         FontWeight="Bold"
                         Text="{DynamicResource MainTitle}" />
-                    
-                    <materialDesign:PopupBox DockPanel.Dock="Right">
+
+                    <materialDesign:PopupBox DockPanel.Dock="Right" ToolTip="快捷设置" StaysOpen="{Binding StaysOpen}">
                         <materialDesign:PopupBox.ToggleContent>
                             <materialDesign:PackIcon
                                 Foreground="AliceBlue"
@@ -46,8 +46,12 @@
                                 Margin="10,10,10,10"/>
                         </materialDesign:PopupBox.ToggleContent>
 
-                        <StackPanel>
-                            <Button Command="{Binding ChangeLanCommand}" Content="语言设置"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{DynamicResource CurLan}" VerticalAlignment ="Center" Margin="5"/>
+                            <ComboBox ItemsSource="{Binding LanguageInfos}"
+                                      SelectedItem="{Binding CurrentLanguage}"
+                                       DisplayMemberPath="Value" HorizontalAlignment="Center"/>
+                            <Button Command="{Binding ConfirmLanCommand}" Content="{DynamicResource ConfirmLan }" HorizontalAlignment="Center"/>
                         </StackPanel>
                     </materialDesign:PopupBox>
 

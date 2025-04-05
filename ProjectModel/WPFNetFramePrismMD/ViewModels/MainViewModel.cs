@@ -26,11 +26,12 @@ namespace WPFNetFramePrismMD.ViewModels
             _aggregator = aggregator;
             _region = region;
             NaviCommand = new DelegateCommand<string>(Navi);
-            ChangeLanCommand= new DelegateCommand(() =>
+            ConfirmLanCommand = new DelegateCommand(() =>
             {
 
-                if (LanguageTool.AppCurrentLanguage == CurrentLanguage.Key) return;
+               // if (LanguageTool.AppCurrentLanguage == CurrentLanguage.Key) return;
 
+                StaysOpen = false;
                 LanguageTool.SetLanguage(CurrentLanguage.Key);
                 aggregator.GetEvent<LanguageEventBus>().Publish(true);
                 //System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("zh-CN");
@@ -40,11 +41,19 @@ namespace WPFNetFramePrismMD.ViewModels
             LanguageInfos = new ObservableCollection<LanguageInfo>();
             InitLanguageInfos();
             CurrentLanguage = LanguageInfos[0];
-            
-            
+
+            StaysOpen = true;
             Messages = new ObservableCollection<MessageModel>();
             _aggregator.GetEvent<MessageEvent>().Subscribe(ShowMessage,filter);
         }
+        private bool _StaysOpen;
+
+        public bool StaysOpen
+        {
+            get { return _StaysOpen; }
+            set { _StaysOpen = value; }
+        }
+
         private ObservableCollection<LanguageInfo> languageInfos;
 
         public ObservableCollection<LanguageInfo> LanguageInfos
@@ -54,7 +63,7 @@ namespace WPFNetFramePrismMD.ViewModels
         }
         private void InitLanguageInfos()
         {
-            LanguageInfos.Add(new LanguageInfo() { Key = "zh-CN", Value = "Chinese" });
+            LanguageInfos.Add(new LanguageInfo() { Key = "zh-CN", Value = "中文" });
             LanguageInfos.Add(new LanguageInfo() { Key = "en-US", Value = "English" });
         }
         private LanguageInfo currentLanguage;
@@ -64,6 +73,7 @@ namespace WPFNetFramePrismMD.ViewModels
             set
             {
                 currentLanguage = value;
+                StaysOpen = true;
                 LanguageChanged();
                 RaisePropertyChanged();
             }
@@ -124,7 +134,7 @@ namespace WPFNetFramePrismMD.ViewModels
                     System.Diagnostics.Debug.WriteLine(callBack.Error.Message);
             });
         }
-        public DelegateCommand ChangeLanCommand { get; set; }
+        public DelegateCommand ConfirmLanCommand { get; set; }
         public DelegateCommand<string> NaviCommand { get;set; }
         public bool IsNavigationTarget(NavigationContext navigationContext)
         {

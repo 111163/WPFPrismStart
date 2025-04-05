@@ -225,10 +225,10 @@ Kind="Bike" />
             <TabItem Header="Json文件操作" Background="Blue">
                 <StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Button Content="生成默认数据" Command="{Binding BuildDefaultDataCommand}" CommandParameter="Json" Margin="0,0,8,0"/>
-                        <Button Content="加载Json文件" Command="{Binding LoadJsonFileCommand}" Margin="0,0,8,0"/>
-                        <Button Content="保存Json文件" Command="{Binding SaveJsonFileCommand}" Margin="0,0,8,0"/>
-                        <Button Content="清空Json文件" Command="{Binding ClearJsonFileCommand}" Margin="0,0,8,0"/>
+                        <Button Content="{DynamicResource BuildDefaultData}" Command="{Binding BuildDefaultDataCommand}" CommandParameter="Json" Margin="0,0,8,0"/>
+                        <Button Content="{DynamicResource LoadJson}" Command="{Binding LoadJsonFileCommand}" Margin="0,0,8,0"/>
+                        <Button Content="{DynamicResource SaveJson}" Command="{Binding SaveJsonFileCommand}" Margin="0,0,8,0"/>
+                        <Button Content="{DynamicResource ClearJson}" Command="{Binding ClearJsonFileCommand}" Margin="0,0,8,0"/>
                     </StackPanel>
                     <ListView ItemsSource="{Binding StuJsonList}" SelectedIndex="{Binding SelectedJsonItemIndex}">
                         <ListView.View>

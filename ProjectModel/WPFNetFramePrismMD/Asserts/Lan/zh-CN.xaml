@@ -11,9 +11,16 @@
     <sys:String x:Key="TestShowMsg">显示Msg</sys:String>
     <sys:String x:Key="TestFileOper">文件操作r</sys:String>
 
-
-    <sys:String x:Key="CurrentLanguage">当前语言</sys:String>
+    <sys:String x:Key="CurLan">当前语言</sys:String>
+    <sys:String x:Key="ConfirmLan">确认语言</sys:String>
     <sys:String x:Key="Skin">主题</sys:String>
     <sys:String x:Key="SaveSetting">保存设置</sys:String>
+    
+    
+    <!--TestFileOper-->
+    <sys:String x:Key="BuildDefaultData">生成默认数据"</sys:String>
+    <sys:String x:Key="LoadJson">加载Json文件"</sys:String>
+    <sys:String x:Key="SaveJson">保存Json文件"</sys:String>
+    <sys:String x:Key="ClearJson">清空Json文件"</sys:String>
 
 </ResourceDictionary>

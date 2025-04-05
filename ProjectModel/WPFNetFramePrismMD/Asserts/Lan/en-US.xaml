@@ -11,10 +11,17 @@
     <sys:String x:Key="TestEventView">TestEventView</sys:String>
     <sys:String x:Key="TestShowMsg">TestShowMsg  </sys:String>
     <sys:String x:Key="TestFileOper">TestFileOper</sys:String>
-                
-                
-    <sys:String x:Key="CurrentLanguage">CurrentLanguage</sys:String>
+
+    <sys:String x:Key="CurLan">Cur Language</sys:String>
+    <sys:String x:Key="ConfirmLan">ConfirmLan</sys:String>
     <sys:String x:Key="Skin">Skin</sys:String>
     <sys:String x:Key="SaveSetting">SaveSetting</sys:String>
+
+
+    <!--TestFileOper-->
+    <sys:String x:Key="BuildDefaultData">BuildDefaultData"</sys:String>
+    <sys:String x:Key="LoadJson">LoadJson"</sys:String>
+    <sys:String x:Key="SaveJson">SaveJson"</sys:String>
+    <sys:String x:Key="ClearJson">ClearJson"</sys:String>
 
 </ResourceDictionary>
