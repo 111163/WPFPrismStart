@@ -8,9 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using WPFNetFramePrismMD.ViewModels.Dialogs;
+using WPFNetFramePrismMD.ViewModels.RegionConvert;
 using WPFNetFramePrismMD.ViewModels.RegionUC;
 using WPFNetFramePrismMD.Views;
 using WPFNetFramePrismMD.Views.Dialogs;
+using WPFNetFramePrismMD.Views.RegionConvert;
 using WPFNetFramePrismMD.Views.RegionUC;
 
 namespace WPFNetFramePrismMD
@@ -34,6 +36,7 @@ namespace WPFNetFramePrismMD
             containerRegistry.RegisterForNavigation<TestEventView, TestEventViewModel>();
             containerRegistry.RegisterForNavigation<TestShowMsgView, TestShowMsgViewModel>();
             containerRegistry.RegisterForNavigation<TestFileOperView, TestFileOperViewModel>();
+            containerRegistry.RegisterForNavigation<UCConverterView, UCConverterViewModel>();
 
 
             //Dialogs 各种弹窗

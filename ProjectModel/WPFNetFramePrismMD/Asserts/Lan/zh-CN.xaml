@@ -23,4 +23,8 @@
     <sys:String x:Key="SaveJson">保存Json文件"</sys:String>
     <sys:String x:Key="ClearJson">清空Json文件"</sys:String>
 
+
+    <!--ConverterDemo-->
+    <sys:String x:Key="ConverterDemo">转换器"</sys:String>
+
 </ResourceDictionary>

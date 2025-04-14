@@ -67,6 +67,7 @@
             <Button Content="{DynamicResource TestEventView}" Command="{Binding NaviCommand}" CommandParameter="TestEventView" Margin="5"/>
             <Button Content="{DynamicResource TestShowMsg}" Command="{Binding NaviCommand}" CommandParameter="TestShowMsgView" Margin="5"/>
             <Button Content="{DynamicResource TestFileOper}" Command="{Binding NaviCommand}" CommandParameter="TestFileOperView" Margin="5"/>
+            <Button Content="{DynamicResource ConverterDemo}" Command="{Binding NaviCommand}" CommandParameter="UCConverterView" Margin="5"/>
        </StackPanel>
         <ContentControl Grid.Row="2" prism:RegionManager.RegionName="MainRegion" />
         <Border Grid.Row="3" BorderThickness="2" BorderBrush="Red">
