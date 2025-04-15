@@ -14,7 +14,14 @@ namespace WPFNetFramePrismMD.Converters
     /// </summary>
     public class TimeConvert : IValueConverter
     {
-        //当值从绑定源传播给绑定目标时，调用方法Convert
+        /// <summary>
+        /// 当值从绑定源传播给绑定目标时，调用方法Convert
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="targetType"></param>
+        /// <param name="parameter"></param>
+        /// <param name="culture"></param>
+        /// <returns></returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value == null)
@@ -22,7 +29,14 @@ namespace WPFNetFramePrismMD.Converters
             DateTime date = (DateTime)value;
             return date.ToString("yyyy-MM-dd");
         }
-        //当值从绑定目标传播给绑定源时，调用此方法ConvertBack
+        /// <summary>
+        /// 当值从绑定目标传播给绑定源时，调用此方法ConvertBack
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="targetType"></param>
+        /// <param name="parameter"></param>
+        /// <param name="culture"></param>
+        /// <returns></returns>
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             string str = value as string;

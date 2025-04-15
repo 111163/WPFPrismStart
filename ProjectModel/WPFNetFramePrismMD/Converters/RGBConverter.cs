@@ -11,7 +11,14 @@ namespace WPFNetFramePrismMD.Converters
 {
     public class RGBConverter : IMultiValueConverter
     {
-        //正向修改，整合颜色值
+        /// <summary>
+        /// 正向修改，整合颜色值
+        /// </summary>
+        /// <param name="values"></param>
+        /// <param name="targetType"></param>
+        /// <param name="parameter"></param>
+        /// <param name="culture"></param>
+        /// <returns></returns>
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
             if (values == null || values.Length < 3)
