@@ -14,16 +14,16 @@ namespace WPFNetFramePrismMD.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value == null)
-                return Brushes.Gray;
+                return Brushes.Red;
                 
             if (int.TryParse(value.ToString(), out int intValue))
             {
                 if (intValue == 1)
-                    return Brushes.Gray;
+                    return Brushes.Green ;
                 else if (intValue == 0)
                     return Brushes.Red;
             }
-            return Brushes.Gray;
+            return Brushes.Green;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

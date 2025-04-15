@@ -19,7 +19,7 @@ namespace WPFNetFramePrismMD.ViewModels.RegionFakeFarm
             {
                 new ProductInfos
                 {
-                    ProPicPath = "pack://application:,,,/Resources/Images/1.jpg",
+                    ProPicPath = Path.Combine(GetRootPath(),"2.png"),
                     ProName = "商品名称1",
                     ProPrice = 100,
                     BuyerNum = 10,
@@ -114,6 +114,7 @@ namespace WPFNetFramePrismMD.ViewModels.RegionFakeFarm
                     IsLastPrice = false
                 }
             };
+            Console.WriteLine(Productlists[0].ProPicPath );
         }
 
         private ObservableCollection<ProductInfos> _Productlists;
@@ -129,7 +130,7 @@ namespace WPFNetFramePrismMD.ViewModels.RegionFakeFarm
         {
             //获取当前执行路径
             string path = AppDomain.CurrentDomain.BaseDirectory;
-            return Path.Combine(path,"Asserts","Img");
+            return Path.Combine(path,"Asserts","Img","Pro");
         }
 
 
@@ -149,5 +150,10 @@ namespace WPFNetFramePrismMD.ViewModels.RegionFakeFarm
         /// 券后价
         /// </summary>
         public bool IsLastPrice { get; set; }
+    }
+
+    public class IncreasePointsInfo
+    {
+
     }
 }

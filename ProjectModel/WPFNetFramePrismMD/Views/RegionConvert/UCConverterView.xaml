@@ -33,19 +33,26 @@
                     <Ellipse Fill="{Binding ElementName=SingleValue,Path=Text , Converter={StaticResource cvtIntToColor}}"
                              Height="100" Width="100" Margin="5" Stroke="Black"/>
                 </StackPanel>
-                <StackPanel Grid.Column="1" >
-                    <TextBlock Text="选择时间"/>
-                    <DatePicker x:Name="dateOne"  
-                            HorizontalAlignment="Left" Margin="85,50,0,0" VerticalAlignment="Top" Width="183"
-                            SelectedDateFormat="Long"/>
-                    <TextBox x:Name="textBox" Text="{Binding ElementName=dateOne,Path=SelectedDate,Converter={StaticResource cvtDate}}" 
-    HorizontalAlignment="Left" 
-    Height="23" Margin="85,105,0,0" 
-    TextWrapping="Wrap" VerticalAlignment="Top" Width="183"/>
-                    <Label x:Name="label" Content="选择结果:" HorizontalAlignment="Left" Margin="19,105,0,0" VerticalAlignment="Top"/>
+                <StackPanel Grid.Column="1"  >
+                    <StackPanel Orientation="Horizontal"  >
+                        <TextBlock Text="选择时间" Width="200"/>
+                        <DatePicker x:Name="dateOne"  
+                                        HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Width="183"
+                                        SelectedDateFormat="Long"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBlock Text="转换后的日期" Width="200"/>
+                        <TextBox x:Name="textBox" Text="{Binding ElementName=dateOne,Path=SelectedDate,Converter={StaticResource cvtDate}}" 
+                                 HorizontalAlignment="Left" 
+                                 Height="23" Margin="5,0,0,0" 
+                                 TextWrapping="Wrap" VerticalAlignment="Top" Width="183"/>
+                    </StackPanel>
 
-                    <Label x:Name="label1" Content="{Binding ElementName=dateOne,Path=Text}" 
-                                HorizontalAlignment="Left" Margin="85,145,0,0" VerticalAlignment="Top"/>
+                    <StackPanel Orientation="Horizontal" >
+                        <Label x:Name="label" Content="选择结果:" Width="200" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
+                        <Label x:Name="label1" Content="{Binding ElementName=dateOne,Path=Text}" 
+                                HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top"/>
+                    </StackPanel>
                 </StackPanel>
                 
             </Grid>

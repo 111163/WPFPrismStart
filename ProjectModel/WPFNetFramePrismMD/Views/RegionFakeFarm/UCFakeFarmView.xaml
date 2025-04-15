@@ -33,13 +33,13 @@
                                 <!-- 商品信息 -->
                                 <StackPanel Grid.Row="1" Margin="5">
                                     <TextBlock Text="{Binding ProName}" FontWeight="Bold" TextWrapping="Wrap"/>
-                                    <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Margin="0,5,0,0"/>
+                                    <!--<TextBlock Text="{Binding Description}" TextWrapping="Wrap" Margin="0,5,0,0"/>-->
                                 </StackPanel>
                                 
                                 <!-- 价格和按钮 -->
                                 <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="5">
-                                    <TextBlock Text="{Binding Price, StringFormat={}{0:C}}" VerticalAlignment="Center"/>
-                                    <Button Content="购买" Margin="10,0,0,0" Command="{Binding DataContext.BuyCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                                    <TextBlock Text="{Binding ProPrice, StringFormat={}{0:C}}" VerticalAlignment="Center"/>
+                                    <Button Content="详情" Margin="10,0,0,0" Command="{Binding DataContext.BuyCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
                                             CommandParameter="{Binding}"/>
                                 </StackPanel>
                             </Grid>
