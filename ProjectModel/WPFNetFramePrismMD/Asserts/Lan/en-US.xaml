@@ -26,4 +26,7 @@
 
     <!--ConverterDemo-->
     <sys:String x:Key="ConverterDemo">ConverterDemo"</sys:String>
+
+    <!--UCFakeFarm-->
+    <sys:String x:Key="UCFakeFarm">UCFakeFarm"</sys:String>
 </ResourceDictionary>

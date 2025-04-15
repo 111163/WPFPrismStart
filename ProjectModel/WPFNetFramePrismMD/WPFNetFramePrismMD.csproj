@@ -76,6 +76,7 @@
     <Compile Include="ViewModels\Dialogs\SettingDialogViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\RegionConvert\UCConverterViewModel.cs" />
+    <Compile Include="ViewModels\RegionFakeFarm\UCFakeFarmViewModel.cs" />
     <Compile Include="ViewModels\RegionUC\TestEventViewModel.cs" />
     <Compile Include="ViewModels\RegionUC\TestFileOperViewModel.cs" />
     <Compile Include="ViewModels\RegionUC\TestShowMsgViewModel.cs" />
@@ -99,6 +100,9 @@
     </Compile>
     <Compile Include="Views\RegionConvert\UCConverterView.xaml.cs">
       <DependentUpon>UCConverterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RegionFakeFarm\UCFakeFarmView.xaml.cs">
+      <DependentUpon>UCFakeFarmView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RegionUC\TestEventView.xaml.cs">
       <DependentUpon>TestEventView.xaml</DependentUpon>
@@ -182,6 +186,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\RegionFakeFarm\UCFakeFarmView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\RegionUC\TestEventView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -250,6 +258,14 @@
     <PackageReference Include="Prism.DryIoc">
       <Version>8.1.97</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asserts\Img\Pro\1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Asserts\Img\Pro\2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -27,4 +27,7 @@
     <!--ConverterDemo-->
     <sys:String x:Key="ConverterDemo">转换器"</sys:String>
 
+    <!--UCFakeFarm-->
+    <sys:String x:Key="UCFakeFarm">芭芭农场"</sys:String>
+
 </ResourceDictionary>
