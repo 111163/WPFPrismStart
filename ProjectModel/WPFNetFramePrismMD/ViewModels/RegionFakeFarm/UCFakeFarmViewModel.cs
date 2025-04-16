@@ -15,7 +15,7 @@ namespace WPFNetFramePrismMD.ViewModels.RegionFakeFarm
         {
             // Constructor logic can be added here if needed
 
-            Productlists= new ObservableCollection<ProductInfos>
+            Productlists= new ObservableCollection<BaseProduct>
             {
                 new ProductInfos
                 {
@@ -24,6 +24,11 @@ namespace WPFNetFramePrismMD.ViewModels.RegionFakeFarm
                     ProPrice = 100,
                     BuyerNum = 10,
                     IsLastPrice = true
+                },
+                new IncreasePointsInfo
+                {
+                    NoteStr = "增加积分",
+                    IsConfirm = false
                 },
                 new ProductInfos
                 {
@@ -34,6 +39,11 @@ namespace WPFNetFramePrismMD.ViewModels.RegionFakeFarm
                     IsLastPrice = false
                 }
                 ,
+                new IncreasePointsInfo
+                {
+                    NoteStr = "增加积分",
+                    IsConfirm = false
+                },
                 new ProductInfos
                 {
                     ProPicPath = Path.Combine(GetRootPath(),"1.png"),
@@ -114,12 +124,12 @@ namespace WPFNetFramePrismMD.ViewModels.RegionFakeFarm
                     IsLastPrice = false
                 }
             };
-            Console.WriteLine(Productlists[0].ProPicPath );
+            //Console.WriteLine(Productlists[0].ProPicPath );
         }
 
-        private ObservableCollection<ProductInfos> _Productlists;
+        private ObservableCollection<BaseProduct> _Productlists;
 
-        public ObservableCollection<ProductInfos> Productlists
+        public ObservableCollection<BaseProduct> Productlists
         {
             get { return _Productlists; }
             set { _Productlists = value; }
@@ -136,8 +146,11 @@ namespace WPFNetFramePrismMD.ViewModels.RegionFakeFarm
 
 
     }
+    public class BaseProduct
+    {
 
-    public class ProductInfos
+    }
+    public class ProductInfos: BaseProduct
     {
         public string ProPicPath { get; set; }
         public string ProName { get; set; }
@@ -152,8 +165,9 @@ namespace WPFNetFramePrismMD.ViewModels.RegionFakeFarm
         public bool IsLastPrice { get; set; }
     }
 
-    public class IncreasePointsInfo
+    public class IncreasePointsInfo : BaseProduct
     {
-
+        public string NoteStr { get; set; }
+        public bool IsConfirm { get; set; }
     }
 }

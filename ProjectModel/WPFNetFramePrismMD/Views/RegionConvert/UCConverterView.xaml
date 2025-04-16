@@ -29,7 +29,7 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel >
                     <TextBlock Text="请输入0或者1"/>
-                    <TextBox x:Name="SingleValue"/>
+                    <TextBox x:Name="SingleValue" Text="0"/>
                     <Ellipse Fill="{Binding ElementName=SingleValue,Path=Text , Converter={StaticResource cvtIntToColor}}"
                              Height="100" Width="100" Margin="5" Stroke="Black"/>
                 </StackPanel>
