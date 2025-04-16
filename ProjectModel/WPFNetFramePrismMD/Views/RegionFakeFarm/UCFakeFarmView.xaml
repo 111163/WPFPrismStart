@@ -32,18 +32,20 @@
                     <!-- 价格和按钮 -->
                     <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="5">
                         <TextBlock Text="{Binding ProPrice, StringFormat={}{0:C}}" VerticalAlignment="Center"/>
-                        <Button Content="详情" Margin="10,0,0,0" Command="{Binding DataContext.BuyCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                        <Button Content="详情" Margin="10,0,0,0" Command="{Binding DataContext.ExeCmd, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
                         CommandParameter="{Binding}"/>
                     </StackPanel>
                 </Grid>
             </Border>
         </DataTemplate>
         <DataTemplate DataType="{x:Type FakeModel:IncreasePointsInfo }">
-            <StackPanel Orientation="Horizontal" Margin="5">
-                <TextBlock Text="{Binding NoteStr}" FontWeight="Bold" TextWrapping="Wrap"/>
-                <Button Content="增加" Margin="10,0,0,0" Command="{Binding DataContext.BuyCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
-                        CommandParameter="{Binding}"/>
-            </StackPanel>
+            <Border Width="200" Height="50" Margin="10" BorderBrush="Gray" BorderThickness="1">
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <TextBlock Text="{Binding NoteStr}" FontWeight="Bold" TextWrapping="Wrap"/>
+                    <Button Content="增加" Margin="10,0,0,0" Command="{Binding DataContext.ExeCmd, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                            CommandParameter="{Binding}"/>
+                </StackPanel>
+            </Border>
         </DataTemplate>
     </UserControl.Resources>
     <Grid>

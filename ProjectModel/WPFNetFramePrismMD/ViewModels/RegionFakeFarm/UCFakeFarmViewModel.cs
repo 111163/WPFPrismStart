@@ -1,4 +1,5 @@
-﻿using Prism.Mvvm;
+﻿using Prism.Commands;
+using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -13,9 +14,10 @@ namespace WPFNetFramePrismMD.ViewModels.RegionFakeFarm
     {
         public UCFakeFarmViewModel()
         {
+            ExeCmd = new DelegateCommand<BaseProduct>(ExeCmdDetail);
             // Constructor logic can be added here if needed
 
-            Productlists= new ObservableCollection<BaseProduct>
+            Productlists = new ObservableCollection<BaseProduct>
             {
                 new ProductInfos
                 {
@@ -127,6 +129,20 @@ namespace WPFNetFramePrismMD.ViewModels.RegionFakeFarm
             //Console.WriteLine(Productlists[0].ProPicPath );
         }
 
+        private void ExeCmdDetail(BaseProduct product)
+        {
+            if(product is ProductInfos productInfo)
+            {
+                // Handle ProductInfos specific logic
+                Console.WriteLine($"Product Name: {productInfo.ProName}, Price: {productInfo.ProPrice}");
+            }
+            else if (product is IncreasePointsInfo increasePointsInfo)
+            {
+                // Handle IncreasePointsInfo specific logic
+                Console.WriteLine($"Note: {increasePointsInfo.NoteStr}, Confirmed: {increasePointsInfo.IsConfirm}");
+            }
+        }
+
         private ObservableCollection<BaseProduct> _Productlists;
 
         public ObservableCollection<BaseProduct> Productlists
@@ -143,6 +159,8 @@ namespace WPFNetFramePrismMD.ViewModels.RegionFakeFarm
             return Path.Combine(path,"Asserts","Img","Pro");
         }
 
+
+        public DelegateCommand<BaseProduct> ExeCmd { get; set; }
 
 
     }
