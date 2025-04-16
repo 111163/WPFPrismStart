@@ -21,7 +21,7 @@ namespace WPFNetFramePrismMD.ViewModels.RegionFakeFarm
             {
                 new ProductInfos
                 {
-                    ProPicPath = Path.Combine(GetRootPath(),"2.png"),
+                    ProPicPath = Path.Combine(GetRootPath(),"1.png"),
                     ProName = "商品名称1",
                     ProPrice = 100,
                     BuyerNum = 10,
@@ -48,8 +48,8 @@ namespace WPFNetFramePrismMD.ViewModels.RegionFakeFarm
                 },
                 new ProductInfos
                 {
-                    ProPicPath = Path.Combine(GetRootPath(),"1.png"),
-                    ProName = "商品名称2",
+                    ProPicPath = Path.Combine(GetRootPath(),"3.png"),
+                    ProName = "商品名称3",
                     ProPrice = 200,
                     BuyerNum = 20,
                     IsLastPrice = false
@@ -57,8 +57,8 @@ namespace WPFNetFramePrismMD.ViewModels.RegionFakeFarm
                 ,
                 new ProductInfos
                 {
-                    ProPicPath = "pack://application:,,,/Resources/Images/2.jpg",
-                    ProName = "商品名称2",
+                    ProPicPath = Path.Combine(GetRootPath(),"4.png"),
+                    ProName = "商品名称4",
                     ProPrice = 200,
                     BuyerNum = 20,
                     IsLastPrice = false
@@ -66,8 +66,8 @@ namespace WPFNetFramePrismMD.ViewModels.RegionFakeFarm
                 ,
                 new ProductInfos
                 {
-                    ProPicPath = "pack://application:,,,/Resources/Images/2.jpg",
-                    ProName = "商品名称2",
+                    ProPicPath = Path.Combine(GetRootPath(),"5.jpg"),
+                    ProName = "商品名称5",
                     ProPrice = 200,
                     BuyerNum = 20,
                     IsLastPrice = false
@@ -75,8 +75,8 @@ namespace WPFNetFramePrismMD.ViewModels.RegionFakeFarm
                 ,
                 new ProductInfos
                 {
-                    ProPicPath = "pack://application:,,,/Resources/Images/2.jpg",
-                    ProName = "商品名称2",
+                    ProPicPath = Path.Combine(GetRootPath(),"6.jpg"),
+                    ProName = "商品名称6",
                     ProPrice = 200,
                     BuyerNum = 20,
                     IsLastPrice = false
@@ -84,8 +84,8 @@ namespace WPFNetFramePrismMD.ViewModels.RegionFakeFarm
                 ,
                 new ProductInfos
                 {
-                    ProPicPath = "pack://application:,,,/Resources/Images/2.jpg",
-                    ProName = "商品名称2",
+                    ProPicPath = Path.Combine(GetRootPath(),"7.jpg"),
+                    ProName = "商品名称7",
                     ProPrice = 200,
                     BuyerNum = 20,
                     IsLastPrice = false
@@ -93,8 +93,8 @@ namespace WPFNetFramePrismMD.ViewModels.RegionFakeFarm
                 ,
                 new ProductInfos
                 {
-                    ProPicPath = "pack://application:,,,/Resources/Images/2.jpg",
-                    ProName = "商品名称2",
+                    ProPicPath = Path.Combine(GetRootPath(),"8.jpg"),
+                    ProName = "商品名称8",
                     ProPrice = 200,
                     BuyerNum = 20,
                     IsLastPrice = false
@@ -102,8 +102,8 @@ namespace WPFNetFramePrismMD.ViewModels.RegionFakeFarm
                 ,
                 new ProductInfos
                 {
-                    ProPicPath = "pack://application:,,,/Resources/Images/2.jpg",
-                    ProName = "商品名称2",
+                    ProPicPath = Path.Combine(GetRootPath(),"9.jpg"),
+                    ProName = "商品名称9",
                     ProPrice = 200,
                     BuyerNum = 20,
                     IsLastPrice = false
@@ -111,16 +111,25 @@ namespace WPFNetFramePrismMD.ViewModels.RegionFakeFarm
                 ,
                 new ProductInfos
                 {
-                    ProPicPath = "pack://application:,,,/Resources/Images/2.jpg",
-                    ProName = "商品名称2",
+                    ProPicPath = Path.Combine(GetRootPath(),"10.jpg"),
+                    ProName = "商品名称10",
                     ProPrice = 200,
                     BuyerNum = 20,
                     IsLastPrice = false
                 },
                 new ProductInfos
                 {
-                    ProPicPath = "pack://application:,,,/Resources/Images/2.jpg",
-                    ProName = "商品名称2",
+                    ProPicPath = Path.Combine(GetRootPath(),"11.jpg"),
+                    ProName = "商品名称11",
+                    ProPrice = 200,
+                    BuyerNum = 20,
+                    IsLastPrice = false
+                }
+                ,
+                new ProductInfos
+                {
+                    ProPicPath = Path.Combine(GetRootPath(),"12.jpg"),
+                    ProName = "商品名称12",
                     ProPrice = 200,
                     BuyerNum = 20,
                     IsLastPrice = false
