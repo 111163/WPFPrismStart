@@ -60,16 +60,58 @@
             </Grid>
         </materialDesign:ColorZone>
 
-        <StackPanel Orientation="Horizontal" Grid.Row="1" >
-            <Button Content="{DynamicResource ViewA}" Command="{Binding NaviCommand}" CommandParameter="TestViewA" Margin="5"/>
-            <Button Content="{DynamicResource DialogsView}" Command="{Binding NaviCommand}" CommandParameter="TestDialogsView" Margin="5"/>
-            <Button Content="{DynamicResource ViewC}" Command="{Binding NaviCommand}" CommandParameter="TestViewC" Margin="5"/>
-            <Button Content="{DynamicResource TestEventView}" Command="{Binding NaviCommand}" CommandParameter="TestEventView" Margin="5"/>
-            <Button Content="{DynamicResource TestShowMsg}" Command="{Binding NaviCommand}" CommandParameter="TestShowMsgView" Margin="5"/>
-            <Button Content="{DynamicResource TestFileOper}" Command="{Binding NaviCommand}" CommandParameter="TestFileOperView" Margin="5"/>
-            <Button Content="{DynamicResource ConverterDemo}" Command="{Binding NaviCommand}" CommandParameter="UCConverterView" Margin="5"/>
-            <Button Content="{DynamicResource UCFakeFarm}" Command="{Binding NaviCommand}" CommandParameter="UCFakeFarmView" Margin="5"/>
-       </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Command="{Binding NaviCommand}" CommandParameter="TestViewA" Margin="5" Grid.Column="0">
+                <Viewbox>
+                    <TextBlock Text="{DynamicResource ViewA}"/>
+                </Viewbox>
+            </Button>
+            <Button Command="{Binding NaviCommand}" CommandParameter="TestDialogsView" Margin="5" Grid.Column="1">
+                <Viewbox>
+                    <TextBlock Text="{DynamicResource DialogsView}"/>
+                </Viewbox>
+            </Button>
+            <Button Command="{Binding NaviCommand}" CommandParameter="TestViewC" Margin="5" Grid.Column="2">
+                <Viewbox>
+                    <TextBlock Text="{DynamicResource ViewC}"/>
+                </Viewbox>
+            </Button>
+            <Button Command="{Binding NaviCommand}" CommandParameter="TestEventView" Margin="5" Grid.Column="3">
+                <Viewbox>
+                    <TextBlock Text="{DynamicResource TestEventView}"/>
+                </Viewbox>
+            </Button>
+            <Button Command="{Binding NaviCommand}" CommandParameter="TestShowMsgView" Margin="5" Grid.Column="4">
+                <Viewbox>
+                    <TextBlock Text="{DynamicResource TestShowMsg}"/>
+                </Viewbox>
+            </Button>
+            <Button Command="{Binding NaviCommand}" CommandParameter="TestFileOperView" Margin="5" Grid.Column="5">
+                <Viewbox>
+                    <TextBlock Text="{DynamicResource TestFileOper}"/>
+                </Viewbox>
+            </Button>
+            <Button Command="{Binding NaviCommand}" CommandParameter="UCConverterView" Margin="5" Grid.Column="6">
+                <Viewbox>
+                    <TextBlock Text="{DynamicResource ConverterDemo}"/>
+                </Viewbox>
+            </Button>
+            <Button Command="{Binding NaviCommand}" CommandParameter="UCFakeFarmView" Margin="5" Grid.Column="7">
+                <Viewbox>
+                    <TextBlock Text="{DynamicResource UCFakeFarm}"/>
+                </Viewbox>
+            </Button>
+        </Grid>
         <ContentControl Grid.Row="2" prism:RegionManager.RegionName="MainRegion" />
         <Border Grid.Row="3" BorderThickness="2" BorderBrush="Red">
             <TabControl>
