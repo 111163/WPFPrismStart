@@ -83,6 +83,7 @@
     <Compile Include="ViewModels\RegionUC\TestDialogsViewModel.cs" />
     <Compile Include="ViewModels\RegionUC\TestViewAModel.cs" />
     <Compile Include="ViewModels\RegionUC\TestViewCModel.cs" />
+    <Compile Include="ViewModels\ThreadSync\ManualResetEventViewModel.cs" />
     <Compile Include="Views\Dialogs\LoginDialogView.xaml.cs">
       <DependentUpon>LoginDialogView.xaml</DependentUpon>
     </Compile>
@@ -121,6 +122,9 @@
     </Compile>
     <Compile Include="Views\RegionUC\TestViewC.xaml.cs">
       <DependentUpon>TestViewC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ThreadSync\ManualResetEventView.xaml.cs">
+      <DependentUpon>ManualResetEventView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -211,6 +215,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\RegionUC\TestViewC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ThreadSync\ManualResetEventView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

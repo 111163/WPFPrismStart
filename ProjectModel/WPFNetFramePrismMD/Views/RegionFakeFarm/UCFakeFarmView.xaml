@@ -7,9 +7,11 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              xmlns:FakeModel="clr-namespace:WPFNetFramePrismMD.ViewModels.RegionFakeFarm" 
-            xmlns:prism="http://prismlibrary.com/"
-            xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
-            xmlns:converters="clr-namespace:WPFNetFramePrismMD.Converters" >
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True" 
+             xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:HandyC="https://handyorg.github.io/handycontrol" 
+             xmlns:converters="clr-namespace:WPFNetFramePrismMD.Converters" >
     <UserControl.Resources >
         <DataTemplate DataType="{x:Type FakeModel:ProductInfos }" >
             <Border Width="200" Height="250" Margin="10" BorderBrush="Gray" BorderThickness="1">
