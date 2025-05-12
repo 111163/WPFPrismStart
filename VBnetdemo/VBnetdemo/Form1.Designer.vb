@@ -23,15 +23,18 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.btnInit = New System.Windows.Forms.Button()
-        Me.btnWrite = New System.Windows.Forms.Button()
-        Me.txtAddress = New System.Windows.Forms.TextBox()
-        Me.txtAge = New System.Windows.Forms.TextBox()
-        Me.txtName = New System.Windows.Forms.TextBox()
-        Me.txtPhone = New System.Windows.Forms.TextBox()
+        Me.btnAddWrite = New System.Windows.Forms.Button()
+        Me.txtProvincename = New System.Windows.Forms.TextBox()
+        Me.txtCityName = New System.Windows.Forms.TextBox()
+        Me.txtGDP = New System.Windows.Forms.TextBox()
+        Me.txtIndex = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.BtnQuery = New System.Windows.Forms.Button()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnInit
@@ -43,109 +46,132 @@ Partial Class Form1
         Me.btnInit.Text = "Init"
         Me.btnInit.UseVisualStyleBackColor = True
         '
-        'btnWrite
+        'btnAddWrite
         '
-        Me.btnWrite.Location = New System.Drawing.Point(327, 66)
-        Me.btnWrite.Name = "btnWrite"
-        Me.btnWrite.Size = New System.Drawing.Size(165, 82)
-        Me.btnWrite.TabIndex = 1
-        Me.btnWrite.Text = "Write"
-        Me.btnWrite.UseVisualStyleBackColor = True
+        Me.btnAddWrite.Location = New System.Drawing.Point(303, 374)
+        Me.btnAddWrite.Name = "btnAddWrite"
+        Me.btnAddWrite.Size = New System.Drawing.Size(165, 82)
+        Me.btnAddWrite.TabIndex = 1
+        Me.btnAddWrite.Text = "AddWrite"
+        Me.btnAddWrite.UseVisualStyleBackColor = True
         '
-        'txtAddress
+        'txtProvincename
         '
-        Me.txtAddress.Location = New System.Drawing.Point(79, 269)
-        Me.txtAddress.Name = "txtAddress"
-        Me.txtAddress.Size = New System.Drawing.Size(100, 21)
-        Me.txtAddress.TabIndex = 2
+        Me.txtProvincename.Location = New System.Drawing.Point(62, 297)
+        Me.txtProvincename.Name = "txtProvincename"
+        Me.txtProvincename.Size = New System.Drawing.Size(100, 21)
+        Me.txtProvincename.TabIndex = 2
         '
-        'txtAge
+        'txtCityName
         '
-        Me.txtAge.Location = New System.Drawing.Point(214, 269)
-        Me.txtAge.Name = "txtAge"
-        Me.txtAge.Size = New System.Drawing.Size(100, 21)
-        Me.txtAge.TabIndex = 2
+        Me.txtCityName.Location = New System.Drawing.Point(197, 297)
+        Me.txtCityName.Name = "txtCityName"
+        Me.txtCityName.Size = New System.Drawing.Size(100, 21)
+        Me.txtCityName.TabIndex = 2
         '
-        'txtName
+        'txtGDP
         '
-        Me.txtName.Location = New System.Drawing.Point(327, 269)
-        Me.txtName.Name = "txtName"
-        Me.txtName.Size = New System.Drawing.Size(100, 21)
-        Me.txtName.TabIndex = 2
+        Me.txtGDP.Location = New System.Drawing.Point(310, 297)
+        Me.txtGDP.Name = "txtGDP"
+        Me.txtGDP.Size = New System.Drawing.Size(100, 21)
+        Me.txtGDP.TabIndex = 2
         '
-        'txtPhone
+        'txtIndex
         '
-        Me.txtPhone.Location = New System.Drawing.Point(456, 269)
-        Me.txtPhone.Name = "txtPhone"
-        Me.txtPhone.Size = New System.Drawing.Size(100, 21)
-        Me.txtPhone.TabIndex = 2
+        Me.txtIndex.Location = New System.Drawing.Point(439, 297)
+        Me.txtIndex.Name = "txtIndex"
+        Me.txtIndex.Size = New System.Drawing.Size(100, 21)
+        Me.txtIndex.TabIndex = 2
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(466, 231)
+        Me.Label1.Location = New System.Drawing.Point(449, 259)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(53, 12)
         Me.Label1.TabIndex = 3
-        Me.Label1.Text = "txtPhone"
+        Me.Label1.Text = "txtIndex"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(340, 231)
+        Me.Label2.Location = New System.Drawing.Point(323, 259)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(47, 12)
+        Me.Label2.Size = New System.Drawing.Size(41, 12)
         Me.Label2.TabIndex = 3
-        Me.Label2.Text = "txtName"
+        Me.Label2.Text = "txtGDP"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(228, 231)
+        Me.Label3.Location = New System.Drawing.Point(211, 259)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(41, 12)
+        Me.Label3.Size = New System.Drawing.Size(71, 12)
         Me.Label3.TabIndex = 3
-        Me.Label3.Text = "txtAge"
+        Me.Label3.Text = "txtCityName"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(86, 231)
+        Me.Label4.Location = New System.Drawing.Point(69, 259)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(65, 12)
+        Me.Label4.Size = New System.Drawing.Size(95, 12)
         Me.Label4.TabIndex = 3
-        Me.Label4.Text = "txtAddress"
+        Me.Label4.Text = "txtProvincename"
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(265, 12)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.RowTemplate.Height = 23
+        Me.DataGridView1.Size = New System.Drawing.Size(536, 230)
+        Me.DataGridView1.TabIndex = 4
+        '
+        'BtnQuery
+        '
+        Me.BtnQuery.Location = New System.Drawing.Point(62, 374)
+        Me.BtnQuery.Name = "BtnQuery"
+        Me.BtnQuery.Size = New System.Drawing.Size(165, 82)
+        Me.BtnQuery.TabIndex = 5
+        Me.BtnQuery.Text = "Query"
+        Me.BtnQuery.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(871, 532)
+        Me.Controls.Add(Me.BtnQuery)
+        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txtPhone)
-        Me.Controls.Add(Me.txtName)
-        Me.Controls.Add(Me.txtAge)
-        Me.Controls.Add(Me.txtAddress)
-        Me.Controls.Add(Me.btnWrite)
+        Me.Controls.Add(Me.txtIndex)
+        Me.Controls.Add(Me.txtGDP)
+        Me.Controls.Add(Me.txtCityName)
+        Me.Controls.Add(Me.txtProvincename)
+        Me.Controls.Add(Me.btnAddWrite)
         Me.Controls.Add(Me.btnInit)
         Me.Name = "Form1"
         Me.Text = "Form1"
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents btnInit As Button
-    Friend WithEvents btnWrite As Button
-    Friend WithEvents txtAddress As TextBox
-    Friend WithEvents txtAge As TextBox
-    Friend WithEvents txtName As TextBox
-    Friend WithEvents txtPhone As TextBox
+    Friend WithEvents btnAddWrite As Button
+    Friend WithEvents txtProvincename As TextBox
+    Friend WithEvents txtCityName As TextBox
+    Friend WithEvents txtGDP As TextBox
+    Friend WithEvents txtIndex As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents BtnQuery As Button
 End Class
