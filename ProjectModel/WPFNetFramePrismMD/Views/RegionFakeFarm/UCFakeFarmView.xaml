@@ -1,0 +1,94 @@
+﻿<UserControl x:Class="WPFNetFramePrismMD.Views.RegionFakeFarm.UCFakeFarmView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPFNetFramePrismMD.Views.RegionFakeFarm"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             xmlns:FakeModel="clr-namespace:WPFNetFramePrismMD.ViewModels.RegionFakeFarm" 
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True" 
+             xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:HandyC="https://handyorg.github.io/handycontrol" 
+             xmlns:converters="clr-namespace:WPFNetFramePrismMD.Converters" >
+    <UserControl.Resources >
+        <DataTemplate DataType="{x:Type FakeModel:ProductInfos }" >
+            <Border Width="200" Height="250" Margin="10" BorderBrush="Gray" BorderThickness="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="150"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- 商品图片 -->
+                    <Image Grid.Row="0" Source="{Binding ProPicPath}" Stretch="Uniform"/>
+
+                    <!-- 商品信息 -->
+                    <StackPanel Grid.Row="1" Margin="5">
+                        <TextBlock Text="{Binding ProName}" FontWeight="Bold" TextWrapping="Wrap"/>
+                        <!--<TextBlock Text="{Binding Description}" TextWrapping="Wrap" Margin="0,5,0,0"/>-->
+                    </StackPanel>
+
+                    <!-- 价格和按钮 -->
+                    <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="5">
+                        <TextBlock Text="{Binding ProPrice, StringFormat={}{0:C}}" VerticalAlignment="Center"/>
+                        <Button Content="详情" Margin="10,0,0,0" Command="{Binding DataContext.ExeCmd, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                        CommandParameter="{Binding}"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type FakeModel:IncreasePointsInfo }">
+            <Border Width="200" Height="50" Margin="10" BorderBrush="Gray" BorderThickness="1">
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <TextBlock Text="{Binding NoteStr}" FontWeight="Bold" TextWrapping="Wrap"/>
+                    <Button Content="增加" Margin="10,0,0,0" Command="{Binding DataContext.ExeCmd, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                            CommandParameter="{Binding}"/>
+                </StackPanel>
+            </Border>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <ItemsControl ItemsSource="{Binding Productlists}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=ScrollViewer}}"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <!--<ItemsControl.ItemTemplate 只有一个DataTemplate这么写>
+                    <DataTemplate  >
+                        <Border Width="200" Height="250" Margin="10" BorderBrush="Gray" BorderThickness="1">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="150"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                
+                                --><!-- 商品图片 --><!--
+                                <Image Grid.Row="0" Source="{Binding ProPicPath}" Stretch="Uniform"/>
+                                
+                                --><!-- 商品信息 --><!--
+                                <StackPanel Grid.Row="1" Margin="5">
+                                    <TextBlock Text="{Binding ProName}" FontWeight="Bold" TextWrapping="Wrap"/>
+                                    --><!--<TextBlock Text="{Binding Description}" TextWrapping="Wrap" Margin="0,5,0,0"/>--><!--
+                                </StackPanel>
+                                
+                                --><!-- 价格和按钮 --><!--
+                                <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="5">
+                                    <TextBlock Text="{Binding ProPrice, StringFormat={}{0:C}}" VerticalAlignment="Center"/>
+                                    <Button Content="详情" Margin="10,0,0,0" Command="{Binding DataContext.BuyCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                                            CommandParameter="{Binding}"/>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                    
+                </ItemsControl.ItemTemplate>-->
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

@@ -1,4 +1,5 @@
 ﻿using CsvHelper;
+using CsvHelper.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -14,6 +15,10 @@ namespace FeiyaoAutoBaseLib
     /// </summary>
     public class CSVRWTool
     {
+        public CSVRWTool()
+        {
+
+        }
 
         public CSVRWTool(string filePath)
         {
@@ -105,11 +110,18 @@ namespace FeiyaoAutoBaseLib
         /// <returns></returns>
         public CsvResult<T> AppendWriteCsvRecords<T>(IEnumerable<T> records)
         {
+            bool fileExists = File.Exists(_filePath);
+            //bool writeHeader = shouldWriteHeader ?? !fileExists;
+            var config = new CsvConfiguration(CultureInfo.InvariantCulture)
+            {
+                // 只有当文件不存在或者明确指定要写入表头时才写表头
+                HasHeaderRecord = !fileExists 
+            };
             var result = new CsvResult<T>();
             try
             {
-                using (var writer = new StreamWriter(_filePath, append: true))
-                using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+                using (var writer = new StreamWriter(_filePath, append: fileExists))
+                using (var csv = new CsvWriter(writer, config))
                 {
                     csv.WriteRecords(records);
                     result.IsSuccess = true;

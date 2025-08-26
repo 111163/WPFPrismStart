@@ -16,7 +16,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.15*"/>
-            <RowDefinition Height="0.05*"/>
+            <RowDefinition Height="0.07*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="0.4*"/>
         </Grid.RowDefinitions>
@@ -34,19 +34,84 @@
                         HorizontalAlignment="Center"
                         FontSize="24"
                         FontWeight="Bold"
-                        Text="WPFPrism工业自动化启蒙版祝你扬帆起航！__FeiyaoAuto" />
+                        Text="{DynamicResource MainTitle}" />
+
+                    <materialDesign:PopupBox DockPanel.Dock="Right" ToolTip="快捷设置" StaysOpen="{Binding StaysOpen}">
+                        <materialDesign:PopupBox.ToggleContent>
+                            <materialDesign:PackIcon
+                                Foreground="AliceBlue"
+                                Width="50"
+                                Height="50"
+                                Kind="Cog "  
+                                Margin="10,10,10,10"/>
+                        </materialDesign:PopupBox.ToggleContent>
+
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{DynamicResource CurLan}" VerticalAlignment ="Center" Margin="5"/>
+                            <ComboBox ItemsSource="{Binding LanguageInfos}"
+                                      SelectedItem="{Binding CurrentLanguage}"
+                                       DisplayMemberPath="Value" HorizontalAlignment="Center"/>
+                            <Button Command="{Binding ConfirmLanCommand}" Content="{DynamicResource ConfirmLan }" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </materialDesign:PopupBox>
+
+
                 </StackPanel>
             </Grid>
         </materialDesign:ColorZone>
 
-        <StackPanel Orientation="Horizontal" Grid.Row="1" >
-            <Button Content="ViewA" Command="{Binding NaviCommand}" CommandParameter="TestViewA" Margin="5"/>
-            <Button Content="DialogsView" Command="{Binding NaviCommand}" CommandParameter="TestDialogsView" Margin="5"/>
-            <Button Content="ViewC" Command="{Binding NaviCommand}" CommandParameter="TestViewC" Margin="5"/>
-            <Button Content="TestEventView" Command="{Binding NaviCommand}" CommandParameter="TestEventView" Margin="5"/>
-            <Button Content="TestShowMsg" Command="{Binding NaviCommand}" CommandParameter="TestShowMsgView" Margin="5"/>
-            <Button Content="TestFileOper" Command="{Binding NaviCommand}" CommandParameter="TestFileOperView" Margin="5"/>
-       </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Command="{Binding NaviCommand}" CommandParameter="TestViewA" Margin="5" Grid.Column="0">
+                <Viewbox>
+                    <TextBlock Text="{DynamicResource ViewA}"/>
+                </Viewbox>
+            </Button>
+            <Button Command="{Binding NaviCommand}" CommandParameter="TestDialogsView" Margin="5" Grid.Column="1">
+                <Viewbox>
+                    <TextBlock Text="{DynamicResource DialogsView}"/>
+                </Viewbox>
+            </Button>
+            <Button Command="{Binding NaviCommand}" CommandParameter="TestViewC" Margin="5" Grid.Column="2">
+                <Viewbox>
+                    <TextBlock Text="{DynamicResource ViewC}"/>
+                </Viewbox>
+            </Button>
+            <Button Command="{Binding NaviCommand}" CommandParameter="TestEventView" Margin="5" Grid.Column="3">
+                <Viewbox>
+                    <TextBlock Text="{DynamicResource TestEventView}"/>
+                </Viewbox>
+            </Button>
+            <Button Command="{Binding NaviCommand}" CommandParameter="TestShowMsgView" Margin="5" Grid.Column="4">
+                <Viewbox>
+                    <TextBlock Text="{DynamicResource TestShowMsg}"/>
+                </Viewbox>
+            </Button>
+            <Button Command="{Binding NaviCommand}" CommandParameter="TestFileOperView" Margin="5" Grid.Column="5">
+                <Viewbox>
+                    <TextBlock Text="{DynamicResource TestFileOper}"/>
+                </Viewbox>
+            </Button>
+            <Button Command="{Binding NaviCommand}" CommandParameter="UCConverterView" Margin="5" Grid.Column="6">
+                <Viewbox>
+                    <TextBlock Text="{DynamicResource ConverterDemo}"/>
+                </Viewbox>
+            </Button>
+            <Button Command="{Binding NaviCommand}" CommandParameter="UCFakeFarmView" Margin="5" Grid.Column="7">
+                <Viewbox>
+                    <TextBlock Text="{DynamicResource UCFakeFarm}"/>
+                </Viewbox>
+            </Button>
+        </Grid>
         <ContentControl Grid.Row="2" prism:RegionManager.RegionName="MainRegion" />
         <Border Grid.Row="3" BorderThickness="2" BorderBrush="Red">
             <TabControl>
